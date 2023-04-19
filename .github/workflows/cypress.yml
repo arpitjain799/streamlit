@@ -21,7 +21,8 @@ concurrency:
 
 jobs:
   test:
-    runs-on: ubuntu-latest-8-cores
+    # Forks may not have 8 cores runners available, so use the default runners.
+    runs-on: $(( github.repository == 'streamlit/streamlit' && 'ubuntu-latest-8-cores' || 'ubuntu-latest' }}
 
     defaults:
       run:

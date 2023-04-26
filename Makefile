@@ -334,6 +334,11 @@ else
 	cd frontend; yarn run test --maxWorkers=2
 endif
 
+.PHONY: jstest-backwards-compat
+# Run backwards compat JS tests.
+jstest-backwards-compat:
+	cd frontend; yarn run test --testNamePattern=backwardsCompat
+
 .PHONY: jscoverage
 # Run JS unit tests and generate a coverage report.
 jscoverage:
